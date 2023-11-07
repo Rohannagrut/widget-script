@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoinGecko Widget</title>
+    <!-- <link rel="stylesheet" href="./css/styles1.css" /> -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <div class="select">
+      <label for="tokenSelect">Select a Token:</label>
+      <select id="tokenSelect">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="tether">Tether</option>
+        <option value="usd-coin">USD Coin</option>
+      </select>
+    </div>
+
+    <div id="coinGeckoWidget"></div>
+
+    <script type="text/javascript" src="widgets/widget1/widget1.js"></script>
+    <script>
+      // Handle option change
+      const tokenSelect = document.getElementById("tokenSelect");
+      tokenSelect.addEventListener("change", function () {
+        const selectedToken = tokenSelect.value;
+        loadTokenDetails(selectedToken);
+      });
+
+      //  default we have set the token = Bitcoin
+      loadTokenDetails("bitcoin");
+    </script>
+  </body>
+</html>
